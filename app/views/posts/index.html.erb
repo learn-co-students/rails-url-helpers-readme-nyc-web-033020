@@ -1,0 +1,22 @@
+ 
+<% @posts.each do |post| %>
+  <div><a href='<%= "/posts/#{post.id}" %>'><%= post.title %></a></div>
+<% end %> 
+
+<%# link_to method automatically create an HTML 'a' tag %>
+
+<%# link_to method %>
+<% @posts.each do |post| %>
+  <div><%= link_to post.title, "/posts/#{post.id}" %></div>
+<% end %>
+
+<%# link_to method w/ post path %>
+<% @posts.each do |post| %>
+  <div><%= link_to post.title, post_path(post.id) %></div>
+<% end %>
+
+<%# link_to method w/ post path and id assumption %>
+<% @posts.each do |post| %>
+  <div><%= link_to post.title, post_path(post) %></div>
+<% end %>
+
